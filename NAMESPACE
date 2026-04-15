@@ -1,0 +1,10 @@
+export(GLSUP)
+export(sizing.BH)
+export(sizing.wBH)
+export(minimal.weights.forest)
+export(minimal.weights.poset)
+export(print.GLSUP)
+export(plot.GLSUP)
+S3method(print,GLSUP,print.GLSUP)
+S3method(plot,GLSUP,plot.GLSUP)
+

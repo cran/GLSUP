@@ -8,7 +8,7 @@
 }
 \description{
   Calculates the sum-of-minimal-weights sizing function for the initial
-  elements of a hierarchical tree. 
+  elements of a hierarchical tree or a partially-ordered set. 
 }
 \usage{
 minimal.weights.forest(weights,parents)
@@ -41,22 +41,29 @@ sizing.wBH(weights)
   Three of these functions generate sizing functions based on their
   parameters, for use with the GLSUP function. the sizing.BH function
   can be used directly as a sizing function, as it does not depend on
-  any parameters.
+  any parameters. A sizing function is a function that "counts" the
+  number of discoveries from rejecting any set of null hypotheses. The
+  simplest sizing function is just the number of rejected hypotheses,
+  as used by the Benjamini-Hochberg and Benjamini-Yekutieli
+  methods. However, for some situations, this is not an appropriate
+  way to count discoveries, and other sizing functions are
+  preferable. The functions described provide the following sizing
+  functions:  
 
-  sizing.BH uses the cardinality as the sizing function.
+  \describe{
+    \item{sizing.BH}{uses the cardinality as the sizing function.}
 
-  sizing.wBH uses the sum of weights of selected elements as sizing
-             function.
+    \item{sizing.wBH}{uses the sum of weights of selected elements as sizing
+      function.}
 
-  minimal.weights.poset uses the sum of weights of all minimal elements
-                        in the sub-partial order consisting of selected
-                        elements.
+    \item{minimal.weights.poset}{uses the sum of weights of all minimal
+      elements in the sub-partial order consisting of selected elements.}
 
-  minimal.weights.forest is the same as minimal.weights.poset in the
-                         special case where the partial order is a
-                         hierarchical forest with root as top element in
-                         each tree. In this case, the sizing function
-                         can be made more computationally efficient.
+    \item{minimal.weights.forest}{is the same as minimal.weights.poset
+      in the special case where the partial order is a hierarchical
+      forest with root as top element in each tree. In this case, the
+      sizing function can be made more computationally efficient.}
+  }
 }
 \value{
   A sizing function that can be used with GLSUP. Sizing functions take a
@@ -81,5 +88,7 @@ weights<-2^-c(5,rep(4,2),rep(3,4),rep(2,8),rep(1,16)) #weighted by
                                                       #no. of leaves
 sizing<-minimal.weights.forest(weights,parents)
 
-sizing(seq_len(31))
+sizing(seq_len(31)) # example of how to compute the sizing function.
+### In practice, the sizing function is intended to be used with the
+### GLSUP function.
 }

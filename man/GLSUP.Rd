@@ -42,7 +42,16 @@ GLSUP(pvals,sizing,threshold)
   }
 }
 \details{
-  The GLSUP method 
+  The GLSUP method is a generalisation of the Benjamini-Hochberg (BH) or
+  Benjamini-Yekutieli (BY) procedures, where the cardinality of a set of
+  rejected hypotheses is replaced by a more general sizing function
+  which quantifies the total discovery from rejecting a set of
+  hypotheses, potentially incorporating different importance for
+  different hypotheses, and overlap between the content of the
+  hypotheses. GLSUP selects the largest possible subset of hypotheses
+  such that the sizing function for the set of rejected hypotheses
+  exceeds the largest p-value of any rejected hypothesis multiplied by
+  the threshold.   
 }
 \value{
   An object of class "GLSUP" which contains the following components 

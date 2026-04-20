@@ -2,7 +2,7 @@ Package: GLSUP
 Type: Package
 Title: Generalised Linear Step-Up Procedure for Multiple Hypothesis
         Testing
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: person(given = "Toby",
                       family = "Kenney",
                       role = c("aut","cre"),
@@ -13,7 +13,7 @@ License: GPL-3
 Encoding: UTF-8
 Imports: graphics
 NeedsCompilation: no
-Packaged: 2026-04-08 21:29:37 UTC; tkenney
+Packaged: 2026-04-20 19:55:52 UTC; tkenney
 Author: Toby Kenney [aut, cre]
 Repository: CRAN
-Date/Publication: 2026-04-15 13:00:40 UTC
+Date/Publication: 2026-04-20 22:40:02 UTC
